@@ -52,6 +52,7 @@
             <string>Size</string>
             <key>validTitles</key>
             <array>
+                <string>Do not set</string>
                 <string>16</string>
                 <string>24</string>
                 <string>32 (iPhone default)</string>
@@ -66,6 +67,7 @@
             </array>
             <key>validValues</key>
             <array>
+                <integer>0</integer>
                 <integer>16</integer>
                 <integer>24</integer>
                 <integer>32</integer>
@@ -96,6 +98,7 @@
             <string>Emoji size for iPad Emoji Split Keyboard, does not have any effects on iPhone and iPod.</string>
             <key>validTitles</key>
             <array>
+                <string>Do not set</string>
                 <string>16</string>
                 <string>24</string>
                 <string>32 (Default)</string>
@@ -110,6 +113,7 @@
             </array>
             <key>validValues</key>
             <array>
+                <integer>0</integer>
                 <integer>16</integer>
                 <integer>24</integer>
                 <integer>32</integer>
