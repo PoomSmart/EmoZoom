@@ -1,0 +1,9 @@
+Package: com.ps.emozoom
+Name: EmoZoom
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Scale emoji size on iOS emoji keyboard.
+Maintainer: PoomSmart
+Author: PoomSmart
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 8.3), preferenceloader (>= 2.2.3)
