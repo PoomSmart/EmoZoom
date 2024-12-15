@@ -16,8 +16,8 @@ static CFStringRef notificationString = CFSTR("com.apple.UIKit/preferences.chang
 static BOOL enabled;
 static BOOL noHorizontalSpacing;
 static BOOL noVerticalSpacing;
-static CGFloat newSize = 0;
-static CGFloat newSizeSplit = 0;
+static CGFloat newSize;
+static CGFloat newSizeSplit;
 
 %hook UIKeyboardEmojiGraphicsTraits
 
@@ -52,9 +52,10 @@ static CGFloat newSizeSplit = 0;
 
 - (void)setEmoji:(id)emoji {
     %orig;
-    if (!enabled || newSize >= 32) return;
+    if (!enabled) return;
     UILabel *label = [self valueForKey:@"_emojiLabel"];
-    label.lineBreakMode = 0;
+    if ([label isKindOfClass:UILabel.class])
+        label.lineBreakMode = 0;
 }
 
 %end

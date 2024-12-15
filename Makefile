@@ -1,7 +1,6 @@
 PACKAGE_VERSION = 1.0.0
 ifeq ($(THEOS_PACKAGE_SCHEME),rootless)
 TARGET = iphone:clang:latest:14.0
-ARCHS = arm64 arm64e
 else
 TARGET = iphone:clang:14.5:8.3
 export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
