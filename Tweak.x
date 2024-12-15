@@ -50,12 +50,13 @@ static CGFloat newSizeSplit;
 
 %hook UIKeyboardEmojiCollectionViewCell
 
-- (void)setEmoji:(id)emoji {
-    %orig;
-    if (!enabled) return;
+- (id)initWithFrame:(CGRect)frame {
+    self = %orig;
+    if (self == nil || !enabled) return self;
     UILabel *label = [self valueForKey:@"_emojiLabel"];
     if ([label isKindOfClass:UILabel.class])
         label.lineBreakMode = 0;
+    return self;
 }
 
 %end
