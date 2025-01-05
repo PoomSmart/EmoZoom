@@ -28,16 +28,6 @@ static CGFloat newSizeSplit;
     return newSize ?: width;
 }
 
-- (CGSize)fakeEmojiKeySize {
-    CGSize size = %orig;
-    if (!enabled || newSize == 0) return size;
-    if ([UIKeyboardImplClass isSplit]) {
-        if (newSizeSplit == 0) return size;
-        return CGSizeMake(newSizeSplit + 8, newSizeSplit + 16);
-    }
-    return CGSizeMake(newSize + 8, newSize + 16);
-}
-
 - (CGFloat)minimumInteritemSpacing {
     return enabled && noHorizontalSpacing ? 0 : %orig;
 }
@@ -70,7 +60,7 @@ static void notificationCallback(CFNotificationCenterRef center, void *observer,
 }
 
 %ctor {
-    if (isTarget(TargetTypeApps)) {
+    if (isTarget(TargetTypeApps | TargetTypeGenericExtensions)) {
         UIKeyboardImplClass = %c(UIKeyboardImpl);
         notificationCallback(NULL, NULL, NULL, NULL, NULL);
         CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, notificationCallback, notificationString, NULL, CFNotificationSuspensionBehaviorCoalesce);
