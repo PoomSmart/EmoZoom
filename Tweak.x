@@ -1,6 +1,5 @@
 #define CHECK_TARGET
 #import <PSHeader/PS.h>
-#import <CoreGraphics/CoreGraphics.h>
 @class UIKBTree;
 #import <UIKit/UIKit.h>
 #import <UIKit/UIKeyboardImpl.h>
